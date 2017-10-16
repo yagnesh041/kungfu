@@ -1,0 +1,176 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminmaster.master.cs" Inherits="adminmaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title> Admin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- libraries -->
+    <link href="css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/elements.css">
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+   
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/index.css" type="text/css" media="screen" />    
+
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- lato font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="js/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <!-- knob -->
+    <script src="js/jquery.knob.js"></script>
+    <!-- flot charts -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.stack.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="js/wysihtml5-0.3.0.min.js"></script>
+	<script src="js/bootstrap-wysihtml5.js"></script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="brand" href="home.php">Admin Panel</a>
+
+            <ul class="nav pull-right">                
+                
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                        My Account
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <%--<li><a href="personal-info.html">Personal info</a></li>--%>
+                        <li><a href="accset.aspx">Account settings</a></li>
+                        <li><a href="logout.aspx">Logout</a></li>                        
+                    </ul>
+                </li>
+                
+               <%-- <li class="settings hidden-phone">
+                    <a href="signin.html" role="button">
+                        <i class="icon-share-alt"></i>
+                    </a>
+                </li>--%>
+            </ul>            
+
+          
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div id="sidebar-nav" >
+        <ul id="dashboard-menu">
+            <li class="active">
+              
+                <a href="admin_add_class.aspx">
+                     <i class="icon-"></i>
+                    <span style="width:20%">Add classes</span>
+                </a>
+            </li>            
+            <li>
+                <a href="admin_reg_stu.aspx">
+                     
+                    <span style="margin-left:12%" >Register Students</span>
+                </a>
+            </li>
+       
+            <li>
+                <a href="admin_rankdetail.aspx">
+                    <span>Rank detail</span>
+                </a>
+            </li>
+            <li>
+                <a href="admin_payment.aspx">
+                    <span>Payment</span>
+                </a>
+            </li>
+            <li>
+                <a href="admin_parents.aspx">
+                    <span>ParentsDetail</span>
+                </a>
+            </li>
+            
+           
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+
+	<!-- main container -->
+    <div class="content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+       <%--<div class="container-fluid">
+			<div class="row-fluid" style="margin-top:50px;" >
+            	<div class="span12">
+            	<h1>Welcome! ankit</h1>
+                
+                </div>
+            </div>
+            <hr>
+            <div class="row-fluid">
+            	<div class="span3 thumbnail" style="padding:10px;">
+                	<h3>News</h3>
+                    <br>
+                    <p>Create, edit, Delete News from here<br><br><a href="news.php" class="btn">Go to News</a></p>
+                </div>
+                <div class="span3 thumbnail" style="padding:10px;">
+                	<h3>Gallery</h3>
+                    <br>
+                    <p>Create, edit, Delete Gallery Photos from here<br><br><a href="gallery.php" class="btn">Go to Gallery</a></p>
+                </div>
+                <div class="span3 thumbnail" style="padding:10px;">
+                	<h3>Daily Darshan</h3>
+                    <br>
+                    <p>Create, edit, Delete Photos here<br><br><a href="daily_darshan.php" class="btn">Go to Daily Darshan</a></p>
+                </div>
+                <div class="span3 thumbnail" style="padding:10px;">
+                	<h3>Downloads</h3>
+                    <br>
+                    <p>Create, edit, Delete Photos here<br><br><a href="download.php" class="btn">Go to Downloads</a></p>
+                </div>
+            </div>
+        </div>--%>
+
+    </div>
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>
